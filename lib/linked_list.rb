@@ -54,4 +54,21 @@ class LinkedList
             @head.next_node = pointer
         end
     end
+
+    def insert(position, data)
+        pointer = @head
+        count = 0
+        previous = nil
+        while pointer.next_node != nil
+            if count == position
+                new_node = previous.next_node = Node.new(data)
+                new_node.next_node = pointer
+                break
+            else
+                previous = pointer
+                pointer = pointer.next_node
+                count += 1
+            end
+        end
+    end
 end

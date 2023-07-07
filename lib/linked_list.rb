@@ -1,5 +1,5 @@
 class LinkedList
-    attr_reader :head
+    attr_accessor :head
 
     def initialize
         @head = nil
@@ -42,6 +42,16 @@ class LinkedList
                 pointer = pointer.next_node
             end
             string += "#{pointer.data}"
+        end
+    end
+
+    def prepend(data)
+        if @head.nil?
+            @head = Node.new(data)
+        else
+            pointer = @head
+            @head = Node.new(data)
+            @head.next_node = pointer
         end
     end
 end

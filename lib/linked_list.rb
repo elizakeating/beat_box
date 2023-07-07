@@ -97,6 +97,21 @@ class LinkedList
             end
         end
         string
-        # require 'pry';binding.pry
+    end
+
+    def includes?(value)
+        pointer = @head
+        result = nil
+        
+        while pointer.next_node != nil
+            if pointer.data == value
+                result = true
+                break
+            else
+                result = false
+                pointer = pointer.next_node
+            end
+        end
+        result
     end
 end

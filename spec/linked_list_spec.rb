@@ -46,4 +46,24 @@ RSpec.describe LinkedList do
             expect(list.to_string).to eq("doop")
         end
     end
+
+    describe "#append" do
+        it "appends list with multiple nodes" do
+            list = LinkedList.new 
+
+            expect(list.head).to eq(nil)
+
+            list.append("doop")
+            
+            expect(list).to be_an_instance_of(LinkedList)
+            expect(list.head).to be_an_instance_of(Node)
+            expect(list.head.next_node).to eq(nil)
+
+            list.append("deep")
+            expect(list).to be_an_instance_of(LinkedList)
+            expect(list.head.next_node).to be_an_instance_of(Node)
+            expect(list.count).to eq(2)
+            expect(list.to_string).to eq("doop deep")
+        end
+    end
 end

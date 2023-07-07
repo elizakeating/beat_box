@@ -17,4 +17,15 @@ RSpec.describe LinkedList do
             expect(list.head).to eq(nil)
         end
     end
+
+    describe "#append" do
+        it "appends list with node data" do
+            list = LinkedList.new
+            list.append("doop")
+
+            expect(list).to be_an_instance_of(LinkedList)
+            expect(list.head.data).to eq("doop")
+            expect(list.head.next_node).to eq(nil)
+        end
+    end
 end

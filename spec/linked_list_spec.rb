@@ -54,11 +54,18 @@ RSpec.describe LinkedList do
     end
 
     describe "#to_string" do
-        it "returns string of all elements in list" do
+        it "returns string of data" do
             list = LinkedList.new
             list.append("doop")
 
             expect(list.to_string).to eq("doop")
+        end
+        it "returns string of all node data with multiple nodes" do
+            list = LinkedList.new 
+            list.append("doop")
+            list.append("deep")
+
+            expect(list.to_string).to eq("doop deep")
         end
     end
 end

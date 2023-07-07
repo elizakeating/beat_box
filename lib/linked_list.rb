@@ -32,6 +32,16 @@ class LinkedList
     end
 
     def to_string
-        head.data.to_s
+        if @head.next_node.nil?
+            head.data.to_s
+        else
+            string = ""
+            pointer = @head
+            while pointer.next_node != nil
+                string += "#{pointer.data} "
+                pointer = pointer.next_node
+            end
+            string += "#{pointer.data}"
+        end
     end
 end

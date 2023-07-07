@@ -63,12 +63,40 @@ class LinkedList
             if count == position
                 new_node = previous.next_node = Node.new(data)
                 new_node.next_node = pointer
-                break
+                break # why is this an infinite loop without the break but the others aren't?
             else
                 previous = pointer
                 pointer = pointer.next_node
                 count += 1
             end
         end
+    end
+
+    def find(position, elements)
+        pointer = @head
+        count = 0
+        num_elements = 0
+        string = ""
+
+        while pointer.next_node != nil
+            until count == position
+                pointer = pointer.next_node
+                count += 1
+            end
+            if elements == 1
+                string += "#{pointer.data}"
+                break
+            else
+                until num_elements == elements - 1
+                    string += "#{pointer.data} "
+                    pointer = pointer.next_node
+                    num_elements += 1
+                end
+                string += "#{pointer.data}"
+                break
+            end
+        end
+        string
+        # require 'pry';binding.pry
     end
 end

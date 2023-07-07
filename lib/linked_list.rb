@@ -11,4 +11,8 @@ class LinkedList
         @head = Node.new(data)
         @count += 1
     end
+
+    def to_string
+        head.data.to_s
+    end
 end

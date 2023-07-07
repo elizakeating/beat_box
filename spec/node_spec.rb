@@ -15,7 +15,7 @@ RSpec.describe Node do
             node_2 = Node.new("woop")
 
             expect(node.data).to eq("plop")
-            expecT(node_2.data).to eq("woop")
+            expect(node_2.data).to eq("woop")
         end
     end
 

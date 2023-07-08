@@ -8,7 +8,6 @@ RSpec.describe BeatBox do
             bb = BeatBox.new
             
             expect(bb).to be_an_instance_of(BeatBox)
-            expect(bb.list).to be_an_instance_of(LinkedList)
         end
     end
 
@@ -16,6 +15,7 @@ RSpec.describe BeatBox do
         it "has readable attributes" do
             bb = BeatBox.new
 
+            expect(bb.list).to be_an_instance_of(LinkedList)
             expect(bb.list.head).to eq(nil)
         end
     end
@@ -47,8 +47,10 @@ RSpec.describe BeatBox do
             
             expect(bb.count).to eq(6)
             expect(bb.list.count).to eq(6)
+            require 'pry';binding.pry
             
             bb.play
+            require 'pry';binding.pry
         end
     end
 end

@@ -114,4 +114,16 @@ class LinkedList
         end
         result
     end
+
+    def pop
+        pointer = @head
+        previous = nil
+
+        while pointer.next_node != nil
+            previous = pointer
+            pointer = pointer.next_node 
+        end
+        previous.next_node = nil
+        pointer.data
+    end
 end

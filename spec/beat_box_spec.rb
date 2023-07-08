@@ -39,4 +39,16 @@ RSpec.describe BeatBox do
             expect(bb.count).to eq(6)
         end
     end
+
+    describe "#play" do
+        it "generates string content of beat and inputs it to say command" do
+            bb = BeatBox.new
+            bb.append("deep doo ditt woo hoo shu")
+            
+            expect(bb.count).to eq(6)
+            expect(bb.list.count).to eq(6)
+            
+            bb.play
+        end
+    end
 end

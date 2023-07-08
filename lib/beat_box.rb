@@ -26,4 +26,17 @@ class BeatBox
         end
         count
     end
+
+    def play
+        pointer = @list.head
+        beats = ""
+        
+        while pointer.next_node != nil
+            beats += "#{pointer.data} "
+            pointer = pointer.next_node
+        end
+        beats += "#{pointer.data}"
+        
+        `say -r 500 -v Boing #{beats}`
+    end
 end

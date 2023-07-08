@@ -27,7 +27,16 @@ RSpec.describe BeatBox do
 
             expect(bb.list.head.data).to eq("deep")
             expect(bb.list.head.next_node.data).to eq("doo")
-            require 'pry';binding.pry
+        end
+    end
+
+    describe "#count" do
+        it "counts amount of beats/nodes in beatbox" do
+            bb = BeatBox.new
+            bb.append("deep doo ditt")
+            bb.append("woo hoo shu")
+
+            expect(bb.count).to eq(6)
         end
     end
 end

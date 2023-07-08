@@ -11,4 +11,12 @@ RSpec.describe BeatBox do
             expect(bb.list).to be_an_instance_of(LinkedList)
         end
     end
+
+    describe "#list" do
+        it "has readable attributes" do
+            bb = BeatBox.new
+
+            expect(bb.list.head).to eq(nil)
+        end
+    end
 end

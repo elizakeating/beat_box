@@ -47,10 +47,8 @@ RSpec.describe BeatBox do
             
             expect(bb.count).to eq(6)
             expect(bb.list.count).to eq(6)
-            require 'pry';binding.pry
             
             bb.play
-            require 'pry';binding.pry
         end
     end
 end

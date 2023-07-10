@@ -32,7 +32,9 @@ class LinkedList
     end
 
     def to_string
-        if @head.next_node.nil?
+        if @head.nil?
+            "This list is empty."
+        elsif @head.next_node.nil?
             head.data.to_s
         else
             string = ""
@@ -63,7 +65,7 @@ class LinkedList
             if count == position
                 new_node = previous.next_node = Node.new(data)
                 new_node.next_node = pointer
-                break # why is this an infinite loop without the break but the others aren't?
+                break
             else
                 previous = pointer
                 pointer = pointer.next_node

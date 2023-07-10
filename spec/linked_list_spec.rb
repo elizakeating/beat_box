@@ -82,6 +82,11 @@ RSpec.describe LinkedList do
     end
     
     describe "#to_string" do
+        it "returns statement when there is no data" do
+            list = LinkedList.new
+            
+            expect(list.to_string).to eq("This list is empty.")
+        end
         it "returns string of data" do
             list = LinkedList.new
             list.append("doop")

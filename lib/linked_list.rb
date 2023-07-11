@@ -6,14 +6,14 @@ class LinkedList
     end
 
     def append(data)
-        if @head.nil? # if the list is empty, the new node goes at the beginning
+        if @head.nil?
             @head = Node.new(data)
         else
-            pointer = @head # if there is a head, we need to start there, so the pointer starts there
-            while pointer.next_node != nil # iterate through list until pointer.next_node IS nil, which means its the last node in the list
-                pointer = pointer.next_node # changes the pointer each time pointer.next ISN'T nil
+            pointer = @head
+            while pointer.next_node != nil
+                pointer = pointer.next_node
             end
-            pointer.next_node = Node.new(data) # sets what would be 'nil' to the new node (NEEDED TO TURN next_node TO ACCESSOR FOR THIS!)
+            pointer.next_node = Node.new(data)
         end
     end
 
@@ -60,16 +60,16 @@ class LinkedList
     def insert(position, data)
         pointer = @head
         count = 0
-        previous = nil
-        while pointer.next_node != nil
-            if count == position
-                new_node = previous.next_node = Node.new(data)
-                new_node.next_node = pointer
+        previous = nil     
+        loop do           
+            if count == position               
+                new_node = previous.next_node = Node.new(data)               
+                new_node.next_node = pointer                
                 break
-            else
-                previous = pointer
-                pointer = pointer.next_node
-                count += 1
+            else               
+                previous = pointer               
+                pointer = pointer.next_node                
+                count += 1               
             end
         end
     end

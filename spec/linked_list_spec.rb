@@ -72,12 +72,11 @@ RSpec.describe LinkedList do
         end
         it "counts with three or more nodes" do
             list = LinkedList.new
-            list.append("doop")
-            list.append("deep")
-            list.append("woop")
-            list.append("weep")
+            list.append("plop")
+            list.append("suu")
+            list.prepend("dop")
             
-            expect(list.count).to eq(4)
+            expect(list.count).to eq(3)
         end
     end
     
@@ -128,8 +127,6 @@ RSpec.describe LinkedList do
             list.prepend("dop")
 
             expect(list.to_string).to eq("dop plop suu")
-
-            expect(list.count).to eq(3)
         end
     end
 
@@ -142,6 +139,15 @@ RSpec.describe LinkedList do
             list.insert(1, "woo")
             
             expect(list.to_string).to eq("dop woo plop suu")
+        end
+        it "inserts node at selected position farther in list" do
+            list = LinkedList.new
+            list.append("plop")
+            list.append("suu")
+            list.prepend("dop")
+            list.insert(2, "woo")
+
+            expect(list.to_string).to eq("dop plop woo suu")
         end
     end
 
@@ -184,6 +190,7 @@ RSpec.describe LinkedList do
             list.append("blop")
 
             expect(list.pop).to eq("blop")
+            expect(list.to_string).to eq("deep woo shi shu")
             expect(list.pop).to eq("shu")
             expect(list.to_string).to eq("deep woo shi")
         end

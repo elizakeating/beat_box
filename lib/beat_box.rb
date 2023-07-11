@@ -37,6 +37,6 @@ class BeatBox
         end
         beats += "#{pointer.data}"
         
-        `say -r 500 -v Boing #{beats}`
+        `say -r 250 -v Boing #{beats}`
     end
 end
